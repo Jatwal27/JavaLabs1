@@ -1,17 +1,25 @@
 import java.util.Scanner;
-
 public class Methods {
-        public static void main (String args[]){
-            int width, height, area;
-            Scanner userIn = new Scanner(System.in);
-            System.out.println("Enter the the width of the rectangle: ");
-            width = userIn.nextInt();
-            System.out.println("Enter the the height of the rectangle: ");
-            height = userIn.nextInt();
-
-            calculateArea(int area);
-        }
-    static int calculateArea(int width, int height) {
-        return width*height;
+    public static void main (String[] args){
+        int l, w;
+        Scanner userIn = new Scanner(System.in);
+        System.out.println("Enter the the width of the rectangle: ");
+        w = userIn.nextInt();
+        System.out.println("Enter the the length of the rectangle: ");
+        l = userIn.nextInt();
+        Rectangle r = new Rectangle(l,w);
+        System.out.println("Area : "+r.calculateArea());
     }
 }
+class Rectangle {
+    int length;
+    int width;
+    public Rectangle(int l, int w) {
+        length = l;
+        width = w;
+    }
+    public int calculateArea() {
+        return length*width;
+    }
+}
+
